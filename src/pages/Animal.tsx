@@ -1,5 +1,9 @@
+import { useParams } from "react-router-dom";
+
 export const Animal = () => {
+    const { id } = useParams();
+
     return <>
-        <h1>Här skall man mata djuret...</h1>
+        <h1>Animal: {id}</h1>
     </>
 };

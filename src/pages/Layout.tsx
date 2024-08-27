@@ -8,7 +8,7 @@ export const Layout = () => {
             <nav>
                 <ul>
                     <li><NavLink to={"/"}>Hem</NavLink></li>
-                    <li><NavLink to={"/Animals"}>Djuren</NavLink></li>
+                    <li><NavLink to={"/animals"}>Djuren</NavLink></li>
                 </ul>
             </nav>
         </header>
