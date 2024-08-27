@@ -1,8 +1,10 @@
 import { NavLink, Outlet } from "react-router-dom";
+import "../styles/header.css";
 
 export const Layout = () => {
     return <>
         <header>
+            <h1>Zoo</h1>
             <nav>
                 <ul>
                     <li><NavLink to={"/"}>Hem</NavLink></li>
