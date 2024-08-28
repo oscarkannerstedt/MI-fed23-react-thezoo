@@ -1,8 +1,28 @@
 import { useLoaderData } from "react-router-dom";
 import { IAnimalExt } from "../models/IAnimalExt";
+import { useState } from "react";
 
 export const Animal = () => {
-    const animal = useLoaderData() as IAnimalExt;
+    const loadedAnimal = useLoaderData() as IAnimalExt;
+
+    const [animal, setAnimal] = useState<IAnimalExt>(loadedAnimal);
+    const [isFed, setIsFed] = useState<boolean>(new Date(animal.lastFed) > new Date());
+
+    const feedAnimal = () => {
+        const now = new Date().toISOString();
+        setAnimal({...animal, lastFed: now});
+        setIsFed(true);
+
+        const storedAnimals = localStorage.getItem("animals");
+        if(storedAnimals) {
+            const animals = JSON.parse(storedAnimals) as IAnimalExt[];
+            const updatedAnimals = animals.map(a =>
+                a.id === animal.id ? {...a, lastFed: now} : a
+            );
+
+            localStorage.setItem("animals", JSON.stringify(updatedAnimals));
+        }
+    }
 
     return <section className="animal">
         <h2>{animal?.name}</h2>
@@ -11,6 +31,7 @@ export const Animal = () => {
         <p>{animal?.longDescription}</p>
         <p>Födelseår: {animal?.yearOfBirth}</p>
         <p>Mediciner: {animal?.medicine}</p>
-        <p>Du matade djuret senast: {animal?.lastFed}</p>
+        <p>Du matade djuret senast: {animal.lastFed}</p>
+        <button onClick={feedAnimal} disabled={isFed}>Mata djuret</button>
     </section>
 };
