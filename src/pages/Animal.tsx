@@ -1,26 +1,8 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { IAnimalExt } from "../models/IAnimalExt";
 
 export const Animal = () => {
-    const [animal, setAnimal] = useState<IAnimalExt>();
-
-    const { id } = useParams();
-
-    useEffect(() => {
-        const getData = async () => {
-            const response = await fetch(`https://animals.azurewebsites.net/api/animals/${id}`);
-            const result: IAnimalExt = await response.json();
-            console.log(result);
-            
-
-            setAnimal(result);
-        }
-        
-        if(id && !animal) {
-            getData();
-        }
-    })
+    const animal = useLoaderData() as IAnimalExt;
 
     return <section className="animal">
         <h2>{animal?.name}</h2>
