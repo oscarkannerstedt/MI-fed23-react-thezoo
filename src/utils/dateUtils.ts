@@ -9,3 +9,10 @@ export const formatDate = (dateString: string) => {
         second: "2-digit",
     });
 };
+
+export const isTimeToFeed = (lastFed: string, hours: number): boolean => {
+    const lastFedTime = new Date(lastFed);
+    const timeAgo = new Date();
+    timeAgo.setHours(timeAgo.getHours() - hours)
+    return lastFedTime < timeAgo
+};
