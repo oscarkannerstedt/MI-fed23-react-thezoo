@@ -1,5 +1,6 @@
 import { IAnimalExt } from "../models/IAnimalExt";
 import { formatDate } from "../utils/dateUtils";
+import "../styles/animalPresentation.css";
 
 interface IAnimalPresentationProps {
     animal: IAnimalExt;
@@ -11,7 +12,7 @@ interface IAnimalPresentationProps {
     return <section className="animal">
         <h2>{animal?.name}</h2>
         <h4>{animal?.latinName}</h4>
-        <img src={animal?.imageUrl} alt={animal?.name} height={100} width={100} />
+        <img src={animal?.imageUrl} alt={animal?.name} />
         <p>{animal?.longDescription}</p>
         <p>Födelseår: {animal?.yearOfBirth}</p>
         <p>Mediciner: {animal?.medicine}</p>

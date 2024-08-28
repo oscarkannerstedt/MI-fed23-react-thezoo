@@ -1,0 +1,54 @@
+.animal {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.animal img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.animal h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.animal h4 {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.animal p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.animal button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.animal button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.animal button:not(:disabled):hover {
+    background-color: #0056b3;
+}

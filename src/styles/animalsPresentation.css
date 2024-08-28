@@ -6,12 +6,16 @@
 }
 
 .animal-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, alpha)0.1;
     padding: 16px;
     text-align: center;
+    overflow: hidden;
 }
 
 .animal-card h2 {
@@ -21,11 +25,14 @@
 
 .animal-card img {
     max-width: 100%;
+    max-height: 150px;
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
 .animal-card p {
+    flex-grow: 1;
     font-size: 1em;
     margin-bottom: 10px;
 }

@@ -11,7 +11,7 @@ export const AnimalsPresentation = ({animals}: IAnimalsPresentationProps) => {
         {animals.map(animal => <div key={animal.id} className="animal-card">
             <h2>{animal.name}</h2>
             <p>{animal.shortDescription}</p>
-            <img src={animal.imageUrl} alt={animal.name} width={100} height={100} />
+            <img src={animal.imageUrl} alt={animal.name} />
             <div><Link to={`/animal/${animal.id}`}> Läs mer</Link></div>
         </div>
     )}
