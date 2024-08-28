@@ -1,0 +1,41 @@
+.animals {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 20px;
+}
+
+.animal-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, alpha)0.1;
+    padding: 16px;
+    text-align: center;
+}
+
+.animal-card h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.animal-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.animal-card p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.animal-card a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.animal-card a:hover {
+    text-decoration: underline;
+}
