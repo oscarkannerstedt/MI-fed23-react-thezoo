@@ -6,6 +6,7 @@ import { ImageWithFallback } from "./ImageWithFallback";
 interface IAnimalPresentationProps {
     animal: IAnimalExt;
     feedAnimal: () => void;
+    isFeedable: boolean;
   }
 
   export const AnimalPresentation = ({ animal, feedAnimal }: IAnimalPresentationProps) => {
