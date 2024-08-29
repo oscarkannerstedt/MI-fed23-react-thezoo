@@ -1,6 +1,7 @@
 import { IAnimalExt } from "../models/IAnimalExt";
 import { formatDate, isTimeToFeed } from "../utils/dateUtils";
 import "../styles/animalPresentation.css";
+import { ImageWithFallback } from "./ImageWithFallback";
 
 interface IAnimalPresentationProps {
     animal: IAnimalExt;
@@ -16,7 +17,7 @@ interface IAnimalPresentationProps {
       <section className="animal">
         <h2>{animal?.name}</h2>
         <h4>{animal?.latinName}</h4>
-        <img src={animal?.imageUrl} alt={animal?.name} />
+        <ImageWithFallback src={animal?.imageUrl} alt={animal?.name}/>
         <p>{animal?.longDescription}</p>
         <p>Födelseår: {animal?.yearOfBirth}</p>
         <p>Mediciner: {animal?.medicine}</p>

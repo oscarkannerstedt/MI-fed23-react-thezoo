@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "../styles/animalsPresentation.css";
 import { isTimeToFeed } from "../utils/dateUtils";
 import { IAnimalExt } from "../models/IAnimalExt";
+import { ImageWithFallback } from "./ImageWithFallback";
 
 interface IAnimalsPresentationProps {
     animals: IAnimalExt[];
@@ -18,7 +19,7 @@ export const AnimalsPresentation = ({ animals }: IAnimalsPresentationProps) => {
             <div key={animal.id} className="animal-card">
               <h2>{animal.name}</h2>
               <p>{animal.shortDescription}</p>
-              <img src={animal.imageUrl} alt={animal.name} />
+              <ImageWithFallback src={animal.imageUrl} alt={animal.name}/>
               <p>
                 {needsImmediateFeeding
                     ? "Djuret måste matas omgående!" //Om det gått 4+ timmar
