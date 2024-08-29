@@ -2,6 +2,7 @@ import { IAnimalExt } from "../models/IAnimalExt";
 import { formatDate, isTimeToFeed } from "../utils/dateUtils";
 import "../styles/animalPresentation.css";
 import { ImageWithFallback } from "./ImageWithFallback";
+import { getBackgroundColor } from "../utils/colorUtils";
 
 interface IAnimalPresentationProps {
     animal: IAnimalExt;
@@ -10,12 +11,13 @@ interface IAnimalPresentationProps {
   }
 
   export const AnimalPresentation = ({ animal, feedAnimal }: IAnimalPresentationProps) => {
+    const backgroundColor = getBackgroundColor(animal.lastFed);
     const needsImmediateFeeding = isTimeToFeed(animal.lastFed, 4);
     const canBeFed = isTimeToFeed(animal.lastFed, 3);
     const isTooSoonToFeed = !canBeFed;
 
     return ( 
-      <section className="animal">
+      <section className="animal" style={{backgroundColor}}>
         <h2>{animal?.name}</h2>
         <h4>{animal?.latinName}</h4>
         <ImageWithFallback src={animal?.imageUrl} alt={animal?.name}/>
