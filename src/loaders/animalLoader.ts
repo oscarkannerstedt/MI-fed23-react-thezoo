@@ -13,13 +13,15 @@ export const animalsLoader = async (): Promise <IAnimal[]> => {
         const response= await fetch("https://animals.azurewebsites.net/api/animals");
         const result: IAnimalsResponse = await response.json();
         console.log("djur från api:", result);
-        localStorage.setItem("animals", JSON.stringify(result));
 
-        return result;
+        const animals = result.animals;
+        localStorage.setItem("animals", JSON.stringify(animals));
+
+        return animals;
     }
 };
 
-export const animalLoader = async ({ params }: IAnimalLoader): Promise<IAnimalExt> => {
+export const animalLoader = async ({ params }: IAnimalLoader): Promise<IAnimalExt | undefined> => {
     const storedAnimals = localStorage.getItem("animals");
     if(storedAnimals) {
         const animals = JSON.parse(storedAnimals) as IAnimalExt[];
