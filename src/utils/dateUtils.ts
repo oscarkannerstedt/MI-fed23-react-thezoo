@@ -11,8 +11,10 @@ export const formatDate = (dateString: string) => {
 };
 
 export const isTimeToFeed = (lastFed: string, hours: number): boolean => {
-    const lastFedTime = new Date(lastFed);
-    const timeAgo = new Date();
-    timeAgo.setHours(timeAgo.getHours() - hours)
-    return lastFedTime < timeAgo
+    const lastFedTime = new Date(lastFed).getTime();
+    const currentTime = new Date().getTime();
+
+    const differenceInHours = (currentTime - lastFedTime) / (1000 * 60 * 60);
+
+    return differenceInHours >= hours;
 };
