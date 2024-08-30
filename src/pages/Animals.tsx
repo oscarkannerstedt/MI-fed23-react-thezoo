@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router-dom";
 import { IAnimal } from "../models/IAnimal";
 
 export const Animals = () => {
-    // const animals = useLoaderData() as IAnimal[];
 
     const storedAnimals = localStorage.getItem("animals");
     const animals = storedAnimals ? JSON.parse(storedAnimals) : (useLoaderData() as IAnimal[]);
