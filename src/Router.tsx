@@ -1,4 +1,4 @@
-import { createBrowserRouter, createHashRouter } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import { Animal } from "./pages/Animal";
 import { Animals } from "./pages/Animals";
 import { Home } from "./pages/Home";
@@ -6,7 +6,7 @@ import { Layout } from "./pages/Layout";
 import { NotFound } from "./pages/NotFound";
 import { animalsLoader, animalLoader } from "./loaders/animalLoader";
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout></Layout>,
@@ -14,7 +14,6 @@ export const router = createHashRouter([
         children: [{
             path: "/",
             element: <Home></Home>,
-            index: true,
         },
         {
             path: "/animals",
