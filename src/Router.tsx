@@ -13,7 +13,8 @@ export const router = createBrowserRouter([
         errorElement: <NotFound></NotFound>,
         children: [{
             path: "/",
-            element: <Home></Home>
+            element: <Home></Home>,
+            index: true,
         },
         {
             path: "/animals",
