@@ -15,6 +15,7 @@ npm run dev
 ## Tech Stack
 
 - React
+- Vite
 - React Router
 - TypeScript
 - HTML/CSS
