@@ -9,6 +9,7 @@ The Zoo is a web application that allows users to explore different animals in a
 ## Start the project
 
 npm i
+
 npm run dev
 
 ## Tech Stack
