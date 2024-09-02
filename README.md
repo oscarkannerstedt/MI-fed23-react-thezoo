@@ -27,3 +27,6 @@ npm run dev
 
 ### Animals Page
 ![Animals page](./src/assets/screenshots/animals-desktop.png)
+
+### Animal Page
+![Animal page](./src/assets/screenshots/animal-desktop.png)
