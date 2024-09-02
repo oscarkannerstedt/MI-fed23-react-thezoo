@@ -15,6 +15,7 @@ npm run dev
 ## Tech Stack
 
 - React
+- Vite
 - React Router
 - TypeScript
 - HTML/CSS
@@ -27,3 +28,21 @@ npm run dev
 
 ### Animals Page
 ![Animals page](./src/assets/screenshots/animals-desktop.png)
+
+### Animal Page
+![Animal page](./src/assets/screenshots/animal-desktop.png)
+
+## Mobile View
+
+### Start Page
+![Start page](./src/assets/screenshots/homepage-mobile.png)
+
+### Animals Page
+![Animals page](./src/assets/screenshots/animals-mobile.png)
+
+### Animal Page
+![Animal page](./src/assets/screenshots/animal-mobile.png)
+
+## Author
+
+- Oscar Kannerstedt
